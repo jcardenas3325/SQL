@@ -1,0 +1,28 @@
+CREATE TABLE fictional_characters (
+    id INTEGER PRIMARY KEY, 
+    fullname TEXT, 
+    age INTEGER, 
+    race TEXT);
+    
+INSERT INTO fictional_characters (fullname, age, race) VALUES ("Darth Vader", 45, "Human");
+INSERT INTO fictional_characters (fullname, age, race) VALUES ("Tony Stark", 50, "Human");
+INSERT INTO fictional_characters (fullname, age, race) VALUES ("Son Goku", 24, "Saiyan");
+INSERT INTO fictional_characters (fullname, age, race) VALUES ("Kermit the Frog", 22, "Frog");
+INSERT INTO fictional_characters (fullname, age, race) VALUES ("Katniss Everdeen", 16, "Human");
+
+CREATE TABLE bio (
+    id INTEGER PRIMARY KEY,
+    character_id INTEGER,
+    series TEXT,
+    home TEXT);
+
+INSERT INTO bio (character_id, series, home) VALUES (1, "Star Wars", "Mustafar");
+INSERT INTO bio (character_id, series, home) VALUES (2, "Ironman", "Earth");
+INSERT INTO bio (character_id, series, home) VALUES (3, "DragonBall Z", "Vegeta");
+INSERT INTO bio (character_id, series, home) VALUES (4, "Sesame Street", "Earth");
+INSERT INTO bio (character_id, series, home) VALUES (5, "Hunger Games", "Panem");
+
+SELECT fictional_characters.fullname, bio.series
+FROM fictional_characters
+JOIN bio
+ON fictional_characters.id = bio.character_id;
