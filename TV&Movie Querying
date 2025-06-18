@@ -1,5 +1,5 @@
 --JOINs two tables together
-SELECT 
+SELECT
 people.show_id
 ,people.director
 ,titles.title
